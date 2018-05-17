@@ -20,7 +20,7 @@ public class FileLoader {
 		fileNames = new ArrayList<String>();
 		String[] fList = file.list();
 		int i=0;
-		while(true) {
+		while(true) {  
 			//fileNames.add(file.getName());
 			fileNames.add(fList[i]); 
 			if(!file.exists()) {
