@@ -22,7 +22,7 @@ public class FileLoader {
 		int i=0;
 		while(true) {
 			//fileNames.add(file.getName());
-			fileNames.add(fList[i]);
+			fileNames.add(fList[i]); 
 			if(!file.exists()) {
 				break;
 			}
