@@ -12,7 +12,7 @@ public class Controller {
 		fl.path = "/Users/leehyunji0715/Desktop/ChatCounter/";
 		ArrayList<String> fNames = fl.getFileNames();
 		System.out.println(fNames);
-		
+		    
 		
 		
 	}
