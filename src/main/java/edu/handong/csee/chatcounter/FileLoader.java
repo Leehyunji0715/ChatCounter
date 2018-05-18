@@ -29,7 +29,9 @@ public class FileLoader {
 	}
 	public void getMessages(String fName) {
 		Scanner inputStream = null;
+		MessageParser parser = new MessageParser();
 		String line;
+		System.out.println("The file name is "+fName);
 		try {
 			inputStream = new Scanner (new File (fName),"UTF-8");
 	}
@@ -42,21 +44,40 @@ public class FileLoader {
 			System.out.println(line);
 		}
 		
-		if(fName.contains(".txt")) { // 만약 txt파일이라 -> 윈도
-			MessageWindow msgWin = new MessageWindow();
-			//msgWin.getmUser();
-			//msgWin.getmDate();
-			//msgWin.getmMessages();//have to differentiate from macbook
-		}
-		else if(fName.contains(".csv")) {//csv 파일이라면... ->맥
-			MessageMac msgMac = new MessageMac();
-			//msgMac.getmUser();
-			//msgMac.getmDate();
-			//msgMac.getmMessages();
-		}
+//		if(fName.contains(".txt")) { // 만약 txt파일이라 -> 윈도
+//			MessageWindow msgWin = new MessageWindow();
+//			//msgWin.getmUser();
+//			//msgWin.getmDate();
+//			//msgWin.getmMessages();//have to differentiate from macbook
+//		}
+//		else if(fName.contains(".csv")) {//csv 파일이라면... ->맥
+//			MessageMac msgMac = new MessageMac();
+//			//msgMac.getmUser();
+//			//msgMac.getmDate();
+//			//msgMac.getmMessages();
+//		}
 		inputStream.close ();
 	}
+	public void getFileContents(String fileName) {
+//		String path = FileLoader.class.getResource("").getPath();
+//		System.out.println("\n"+path);//get current path
+		File callFile = new File(path+fileName);
+		try {
+			//Scanner inputStream = new Scanner(new File(fileName));
+			Scanner inputStream = new Scanner(callFile);
+			String line = inputStream.nextLine();
+			while(inputStream.hasNextLine()) {
+				line = inputStream.nextLine();
+				//String[] ary = line.split(",");// split인데 나는 다른걸로 구분해야할듯,정규식????
+				System.out.println(line);
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("Cannot find the file");
+		}
+		
+	}
 }
+
 //	public void sample() {
 //		String fileName = fileNames.get(0);
 //		Scanner inputStream = null;
