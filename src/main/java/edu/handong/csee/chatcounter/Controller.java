@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Controller {
 
 	public static void main(String[] args) {
-		   
+		       
 		FileLoader fl = new FileLoader();
 		fl.path = "/Users/leehyunji0715/Desktop/ChatCounter/";
 		ArrayList<String> fNames = fl.getFileNames();
