@@ -25,44 +25,35 @@ public class FileLoader {
 //	public ArrayList<String> getfileNames() {
 //		return fileNames;
 //	}
-	public void getMessages(String fName) {
-		Scanner inputStream = null;
-		//MessageParser parser = new MessageParser();// instantiate MessgaeParser class
-		String line;
-		System.out.println("The file name is "+fName);
-		try {
-			inputStream = new Scanner (new File (fName),"UTF-8");
-	}
-		catch(FileNotFoundException e) {
-			System.out.println ("Error opening the file " + fName);
-            System.exit (0);
-		}
-		while(inputStream.hasNextLine()) {
-			line = inputStream.nextLine();
-			System.out.println(line);
-		}	
-//		if(fName.contains(".txt")) { // 만약 txt파일이라 -> 윈도
-//			MessageWindow msgWin = new MessageWindow();
-//			//msgWin.getmUser();
-//			//msgWin.getmDate();
-//			//msgWin.getmMessages();//have to differentiate from macbook
+//	public void getMessages(String fName) {
+//		Scanner inputStream = null;
+//		//MessageParser parser = new MessageParser();// instantiate MessgaeParser class
+//		String line;
+//		System.out.println("The file name is "+fName);
+//		try {
+//			inputStream = new Scanner (new File (fName),"UTF-8");
+//	}
+//		catch(FileNotFoundException e) {
+//			System.out.println ("Error opening the file " + fName);
+//            System.exit (0);
 //		}
-//		else if(fName.contains(".csv")) {//csv 파일이라면... ->맥
-//			MessageMac msgMac = new MessageMac();
-//			//msgMac.getmUser();
-//			//msgMac.getmDate();
-//			//msgMac.getmMessages();
-//		}
-		inputStream.close ();
-	}
+//		while(inputStream.hasNextLine()) {
+//			line = inputStream.nextLine();
+//			System.out.println(line);
+//		}	
+//		inputStream.close ();
+//	}
 	public void getFileContents(String fileName) {
 		File callFile = new File(path+fileName);
+		MessageParser parser = new MessageParser(fileName);
 		try {
-			//Scanner inputStream = new Scanner(new File(fileName));
+			
 			Scanner inputStream = new Scanner(callFile);
-			String line = inputStream.nextLine();
+			String line;// = inputStream.nextLine();
 			while(inputStream.hasNextLine()) {
 				line = inputStream.nextLine();
+				//parser.parseMessage(line);
+				
 				//String[] ary = line.split(",");// split인데 나는 다른걸로 구분해야할듯,정규식????
 				System.out.println(line);
 			}
@@ -74,9 +65,7 @@ public class FileLoader {
 		getFileContents(fileName);
 		
 	}
-	
-	
-	
+
 }
 
 
