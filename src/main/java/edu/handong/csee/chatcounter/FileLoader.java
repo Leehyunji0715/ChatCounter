@@ -7,10 +7,11 @@ import java.util.Scanner;
 
 public class FileLoader {
 	private ArrayList<String> fileNames = new ArrayList<String>();
+	static String path;
+	
 	public void setFileNames(ArrayList<String> fileNames) {
 		this.fileNames = fileNames;
 	}
-	String path;
 	public ArrayList<String> getFileNames(){
 		File file = new File(path);
 		String[] fList = file.list();
@@ -21,9 +22,12 @@ public class FileLoader {
 		}
 		return fileNames;
 	}
+//	public ArrayList<String> getfileNames() {
+//		return fileNames;
+//	}
 	public void getMessages(String fName) {
 		Scanner inputStream = null;
-		MessageParser parser = new MessageParser();
+		//MessageParser parser = new MessageParser();// instantiate MessgaeParser class
 		String line;
 		System.out.println("The file name is "+fName);
 		try {
@@ -64,9 +68,15 @@ public class FileLoader {
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("Cannot find the file");
-		} 
+		}
+	}
+	public void parseMessage(String fileName) {
+		getFileContents(fileName);
 		
 	}
+	
+	
+	
 }
 
 

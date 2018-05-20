@@ -1,5 +1,8 @@
 package edu.handong.csee.chatcounter;
 
-public class PMCounter {
+import java.io.File;
 
+public class PMCounter {
+	FileLoader file = new FileLoader();
+	
 }
