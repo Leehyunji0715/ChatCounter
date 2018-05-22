@@ -22,9 +22,6 @@ public class FileLoader {
 		}
 		return fileNames;
 	}
-//	public ArrayList<String> getfileNames() {
-//		return fileNames;
-//	}
 //	public void getMessages(String fName) {
 //		Scanner inputStream = null;
 //		//MessageParser parser = new MessageParser();// instantiate MessgaeParser class
@@ -61,10 +58,10 @@ public class FileLoader {
 			System.out.println("Cannot find the file");
 		}
 	}
-	public void parseMessage(String fileName) {
-		getFileContents(fileName);
-		
-	}
+//	public void parseMessage(String fileName) {
+//		getFileContents(fileName);
+//		
+//	}
 
 }
 
