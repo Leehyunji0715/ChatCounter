@@ -32,31 +32,30 @@ public class Controller {
 			for(int j=0;j<lineNum;j++) {
 				line = aFileLines.get(j); // 한라인을 불러들인다. 
 				//---------------------------------
-//				parser.parseMessage(fNames.get(i),line);// 각 라인을 파싱한다.
-//				
-//				Set set = messageInfo.dateToMessage.keySet(); //for get key
-//				java.util.Iterator iterator = set.iterator();
-//				while(iterator.hasNext()){
-//					  String key = (String)iterator.next();
-//					  String valueName = (String) messageInfo.dateToMessage.get(key);
-//					  System.out.println("hashMap Key : " + key);
-//
-//					}
-				//---------------------------------------		
-//				if(messageInfo.dateToMessage      parser.getmDate() parser.getmName() parser.getmMessage()) {
-//					
-//				}
+				parser.parseMessage(fNames.get(i),line);// 각 라인을 파싱한다.
+				String key;
+				Set set = messageInfo.nameToMessage.keySet(); //for get key in messageinfo.!!name!!
+				java.util.Iterator iterator = set.iterator();
+				while(iterator.hasNext()){
+					  key = (String)iterator.next();
+					  if(parser.getmName()==key && parser.getmMessage()==messageInfo.nameToMessage.get(key)) {
+							//만약 중복이면, 그냥 빠져나옴 저장 ㄴㄴ ㅇㅋ 
+						  break;
+						}
+					  else {// 만약 중복 아니면, 저장하고 빠져나온다. ㅇㅋ 
+						  messageInfo.nameToMessage.put(parser.getmName(), parser.getmMessage());
+						  messageInfo.dateToMessage.put(parser.getmDate(), parser.getmMessage());
+						  int num = messageInfo.nameToNumber.get(parser.getmName())+1;
+						  messageInfo.nameToNumber.put(parser.getmName(), num);
+					  }
+					}
+	//			---------------------------------------		
 //				
 				//비교 할때는 날짜로 하지말것!!! 어떤자료는 안나와있다.. 그래서 이름이랑 메세지를 이용해서 중복검사하는 것이 나을 것 같다. 
 //현재 : 				
 				//중복체크 : 현재라인의 데이트, 이름, 내용이 모두 기존의 해쉬맵 값과 동일한지 체크한다.
 				//중복체크 하고, 중복시 그냥 뛰어넘기, 중복아니면 MessageInfo에 저장하고, 넘버++ 하기....
-				
-				
-				
-				//**** 어쩌면 아래 클래스는 필요없을지도.....*****
-				//counter.countHowManySay(fNames.get(i), messageInfo);// 중복있는지 확인한다. 카운트 해서 저장한다. 
-				
+//				------------------------------------------------------------------				
 			}
 		}
 		//System.out.println(fl.getFileContents(fNames.get(0)));
