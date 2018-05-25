@@ -22,46 +22,28 @@ public class FileLoader {
 		}
 		return fileNames;
 	}
-//	public void getMessages(String fName) {
-//		Scanner inputStream = null;
-//		//MessageParser parser = new MessageParser();// instantiate MessgaeParser class
-//		String line;
-//		System.out.println("The file name is "+fName);
-//		try {
-//			inputStream = new Scanner (new File (fName),"UTF-8");
-//	}
-//		catch(FileNotFoundException e) {
-//			System.out.println ("Error opening the file " + fName);
-//            System.exit (0);
-//		}
-//		while(inputStream.hasNextLine()) {
-//			line = inputStream.nextLine();
-//			System.out.println(line);
-//		}	
-//		inputStream.close ();
-//	}
-	public void getFileContents(String fileName) {
+	public ArrayList<String> getFileContents(String fileName,int lineNum) {
 		File callFile = new File(path+fileName);
 		MessageParser parser = new MessageParser(fileName);
+		ArrayList<String> fileLine = new ArrayList<String>();
+		
 		try {
 			
 			Scanner inputStream = new Scanner(callFile);
 			String line;// = inputStream.nextLine();
 			while(inputStream.hasNextLine()) {
+//				fileLine.add(inputStream.nextLine());
+//				lineNum++;
+			//	*****************************************
 				line = inputStream.nextLine();
-				//parser.parseMessage(line);
-				
-				//String[] ary = line.split(",");// split인데 나는 다른걸로 구분해야할듯,정규식????
-				System.out.println(line);
-			}
+				System.out.println(line); // 파일 정상적인 출력 
+			//  *****************************************
+			}	
 		} catch (FileNotFoundException e) {
 			System.out.println("Cannot find the file");
 		}
+		return fileLine;
 	}
-//	public void parseMessage(String fileName) {
-//		getFileContents(fileName);
-//		
-//	}
 
 }
 
