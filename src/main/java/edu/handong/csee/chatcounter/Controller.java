@@ -22,12 +22,13 @@ public class Controller {
 		
 		Map <String, String> DateAndName = new HashMap<String,String>();
 
-		fl.path = "/Users/leehyunji0715/Desktop/ChatCounter/";
+		fl.path = "/Users/leehyunji0715/Desktop/ChatCounter/"; // fl 클래스 path에 경로 넣어준다. 실제로는 args[0]넣어줘야할듯 
 		
 		ArrayList<String> fNames = fl.getFileNames();
 		System.out.println(fNames); // 파일 이름을 받아온다. 
 
 		for(int i=0;i<fNames.size();i++) {
+			fl.printFileContents(fNames.get(i), lineNum);//~~~~~~~~~~~~~파일 내용 프린트 하기~~~~~~~~~~~~~~~~
 			aFileLines = fl.getFileContents(fNames.get(i), lineNum);
 			for(int j=0;j<lineNum;j++) {
 				line = aFileLines.get(j); // 한라인을 불러들인다. 
