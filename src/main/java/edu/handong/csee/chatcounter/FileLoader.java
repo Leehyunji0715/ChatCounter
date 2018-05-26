@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class FileLoader {
 	private ArrayList<String> fileNames = new ArrayList<String>();
 	static String path;
-	
+	static int lineNum;
 	
 	public ArrayList<String> getFileNames(){ // 파일 네임을 불러오는 메소드 1 
 		File file = new File(path);
@@ -22,7 +22,7 @@ public class FileLoader {
 	} //완료!! 
 	
 	
-	public ArrayList<String> getFileContents(String fileName,int lineNum) {
+	public ArrayList<String> getFileContents(String fileName) {
 		File callFile = new File(path+fileName); //path에 있는 파일을 받아온다. 
 		ArrayList<String> fileLine = new ArrayList<String>();	
 		try {
