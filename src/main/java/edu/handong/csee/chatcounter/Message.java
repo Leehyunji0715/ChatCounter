@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 public class Message {
+	String message;
+	String name;
+	String date;
 	HashSet mUser = new HashSet();
 	Map <String, String> dateToMessage = new HashMap<String,String>();
 	HashMap <String,Integer> nameToNumber = new HashMap<String, Integer>();

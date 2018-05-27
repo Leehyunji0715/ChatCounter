@@ -37,7 +37,7 @@ public class Controller {
 		System.out.println(fNames); // 파일 이름을 받아온다. 
 
 		for(int i=0;i<fNames.size();i++) { // 파일 하나 불러들여오기 
-			//fl.printFileContents(fNames.get(i),fl.lineNum);//~~~~~~~~~~~~~파일 내용 프린트 하기~~~~~~~~~~~~~~~~
+			fl.printFileContents(fNames.get(i),fl.lineNum);//~~~~~~~~~~~~~파일 내용 프린트 하기~~~~~~~~~~~~~~~~
 			aFileLines = fl.getFileContents(fNames.get(i));
 
 			for(int j=0;j<fl.lineNum;j++) {
@@ -56,13 +56,14 @@ public class Controller {
 
 				
 				//if(messageInfo.nameToNumber.get(parser.getmName())==0) {// 처음 넣는 해쉬맵 값이라면....{
+				
 					//forSet = messageInfo.nameToString.get(parser.getmName());
-					forSet.add(parser.getmMessage());
-					messageInfo.nameToString.put(parser.getmName(),forSet);
-					num = messageInfo.nameToNumber.get(parser.getmName())+1;
-					messageInfo.nameToNumber.put(parser.getmName(), num);
-					continue;
-				}
+//					forSet.add(parser.getmMessage());
+//					messageInfo.nameToString.put(parser.getmName(),forSet);
+//					num = messageInfo.nameToNumber.get(parser.getmName())+1;
+//					messageInfo.nameToNumber.put(parser.getmName(), num);
+//					continue;
+//				}
 
 				while(iterator.hasNext()){// 해시맵 키: 네임 와 벨류: 메세지 비교하기 
 					key = (String)iterator.next();
@@ -90,6 +91,7 @@ public class Controller {
 			fl.lineNum = 0;
 		}
 	}
+}
 
 
 
