@@ -4,12 +4,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * This class's role is to load fileContents and fileNames
+ * private ArrayList<String> fileNames is for getting fileNames
+ * 
+ * @author leehyunji0715
+ */
 public class FileLoader {
 	private ArrayList<String> fileNames = new ArrayList<String>();
 	static int lineNum;
 	
-	public ArrayList<String> getFileNames(String path){ // 파일 네임을 불러오는 메소드 1 
+	public ArrayList<String> getFileNames(String path){ 
 		File file = new File(path);
 		String[] fList = file.list();
 		int i=0;
@@ -18,11 +23,11 @@ public class FileLoader {
 			i++;
 		}
 		return fileNames;
-	} //완료!! 
+	}  
 	
 	
 	public ArrayList<String> getFileContents(String fileName,String path) {
-		File callFile = new File(path+fileName); //path에 있는 파일을 받아온다. 
+		File callFile = new File(path+fileName); 
 		ArrayList<String> fileLine = new ArrayList<String>();	
 		try {
 			Scanner inputStream = new Scanner(callFile);
@@ -40,7 +45,7 @@ public class FileLoader {
 
 
 public void printFileContents(String fileName,int lineNum, String path) {
-	File callFile = new File(path+fileName); //path에 있는 파일을 받아온다. 
+	File callFile = new File(path+fileName); 
 	ArrayList<String> fileLine = new ArrayList<String>();
 	
 	try {
@@ -48,7 +53,7 @@ public void printFileContents(String fileName,int lineNum, String path) {
 		String line;
 		while(inputStream.hasNextLine()) {
 			line = inputStream.nextLine();
-			System.out.println(line); // 파일 정상적인 출력 
+			System.out.println(line); 
 		}	
 	} catch (FileNotFoundException e) {
 		System.out.println("Cannot find the file");
