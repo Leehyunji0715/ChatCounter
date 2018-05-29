@@ -9,6 +9,7 @@ public class WindowParser {
 	ChangeNumToString changerAM = new ChangeNumToString();
 	ChangePMToString changerPM = new ChangePMToString();
 	int hour;
+	String shortSentence;
 	public void parseMessage(String fileName, String line, Message m) {
 		// 라인 케이스 1 : ---------날짜 ------------ 한글 
 		String regPattern1 = "-+ (([0-9]{4}). ([0-9]+). ([0-9]+). (.+)) -+";
@@ -52,10 +53,15 @@ public class WindowParser {
 			ChangeMonthToNum cmonth = new ChangeMonthToNum();
 			ChangeDayToString cday = new ChangeDayToString();
 			String month, day,year;
-			year = matcher.group(2);
-			month = cmonth.changeToNum(matcher.group(3));
-			day = cday.changeToDay(matcher.group(4));
-			
+			try {
+				year = matcher.group(2);
+				month = cmonth.changeToNum(matcher.group(3));
+				day = cday.changeToDay(matcher.group(4));
+			}
+			catch(Exception e) {
+				return;
+			}
+			//if 문은 할필요 없을 듯 
 			if(matcher.find()) {
 				prevDate = year+"-"+month+"-"+day;// + matcher;
 			}
@@ -65,10 +71,14 @@ public class WindowParser {
 			ChangeMonthToNum cmonth = new ChangeMonthToNum();
 			ChangeDayToString cday = new ChangeDayToString();
 			String month, day,year;
-			year = matcher.group(5);
-			month = cmonth.changeToNum(matcher.group(3));
-			day = cday.changeToDay(matcher.group(4));
-			
+			try {
+				year = matcher.group(5);
+				month = cmonth.changeToNum(matcher.group(3));
+				day = cday.changeToDay(matcher.group(4));
+			}
+			catch(Exception e) {
+				return;
+			}
 			if(matcher.find()) {
 				prevDate = year+"-"+month+"-"+day;
 			}

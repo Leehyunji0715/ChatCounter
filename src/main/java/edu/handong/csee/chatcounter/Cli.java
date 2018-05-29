@@ -11,7 +11,7 @@ public class Cli {
 	String path;
 	boolean verbose;
 	boolean help;
-	
+	FileLoader fl = new FileLoader();
 	void run(String[] args) {
 		Options options = createOptions();
 		
@@ -27,9 +27,7 @@ public class Cli {
 			// TODO show the number of files in the path
 			
 			if(verbose) {
-				
-				// TODO list all files in the path
-				
+				System.out.println("There are those files named"+fl.getFileNames(path));
 				System.out.println("Your program is terminated. (This message is shown because you turned on -v option!");
 			}
 		}

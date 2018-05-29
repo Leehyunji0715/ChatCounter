@@ -7,7 +7,7 @@ public class MacParser {
 	private String keyName;
 	private String keyDate;
 	private String keyMessage;
-	private String temp;
+	String longSentence;
 	
 	public void parseMessage(String fileName, String line,Boolean Check,Message m) {
 		Check = false;		
@@ -27,14 +27,10 @@ public class MacParser {
 			
 			//무시 ----------------------
 			String exceptPattern1 = "([^ ]+) joined this chatroom.";// 채팅방 입장 
-			
 			String exceptPattern2 = "\\([^ ]+\\)"; //이모티콘 
 			Pattern e2 = Pattern.compile(exceptPattern2);
-			
 			String exceptPattern3 = "Photo";// 사진 올릴 때 
-			
 			String exceptPattern4 = "JC's 한동 자바프로그램 님과 카카오톡 대화";// 그냥 나오는 거 
-			
 			String exceptPattern5 = "저장한 날짜 : [^ ]+ [^ ]+"; // 그냥 나오는 거 2
 			Pattern e5 = Pattern.compile(exceptPattern5);
 			String exceptPattern6 = "WARNING: "; //워닝 
