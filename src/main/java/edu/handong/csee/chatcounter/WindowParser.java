@@ -43,7 +43,6 @@ public class WindowParser {
 				else if(matcher.group(2).contains("PM")||matcher.group(2).contains("오후")) {
 					hour = Integer.parseInt(matcher.group(3));
 					m.setmDate(prevDate+changerPM.changeToString(hour)+":"+matcher.group(4));
-					
 				}
 			}
 			//prevDate = null;

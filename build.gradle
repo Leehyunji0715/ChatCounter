@@ -10,6 +10,8 @@ plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
 }
+apply plugin: 'application'
+mainClassName = "edu.handong.csee.chatcounter.Controller"
 
 dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
@@ -21,7 +23,14 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     
+    compile "org.apache.commons:commons-csv:1.5"
     
+    //https://mvnrepository.com/artifact/org.apache.commons/commons-csv
+	//compile group: 'org.apache.commons', name: 'commons-csv', version: '1.5'
+	
+	// https://mvnrepository.com/artifact/commons-cli/commons-cli
+	compile group: 'commons-cli', name: 'commons-cli', version: '1.4'
+	
 }
 
 // In this section you declare where to find the dependencies of your project

@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class FileLoader {
 	private ArrayList<String> fileNames = new ArrayList<String>();
-	static String path;
+	//static String path;
 	static int lineNum;
 	
-	public ArrayList<String> getFileNames(){ // 파일 네임을 불러오는 메소드 1 
+	public ArrayList<String> getFileNames(String path){ // 파일 네임을 불러오는 메소드 1 
 		File file = new File(path);
 		String[] fList = file.list();
 		int i=0;
@@ -22,7 +22,7 @@ public class FileLoader {
 	} //완료!! 
 	
 	
-	public ArrayList<String> getFileContents(String fileName) {
+	public ArrayList<String> getFileContents(String fileName,String path) {
 		File callFile = new File(path+fileName); //path에 있는 파일을 받아온다. 
 		ArrayList<String> fileLine = new ArrayList<String>();	
 		try {
@@ -42,7 +42,7 @@ public class FileLoader {
 	}// complete...??????
 
 
-public void printFileContents(String fileName,int lineNum) {
+public void printFileContents(String fileName,int lineNum, String path) {
 	File callFile = new File(path+fileName); //path에 있는 파일을 받아온다. 
 	ArrayList<String> fileLine = new ArrayList<String>();
 	
