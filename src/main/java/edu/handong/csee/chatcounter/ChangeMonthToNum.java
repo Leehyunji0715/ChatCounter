@@ -1,5 +1,10 @@
 package edu.handong.csee.chatcounter;
-
+/**
+ * 
+ * This class is for alternate Month to String '00' form
+ * @author leehyunji0715
+ *
+ */
 public class ChangeMonthToNum {
 	String changeToNum(String str) {
 		String result = "";

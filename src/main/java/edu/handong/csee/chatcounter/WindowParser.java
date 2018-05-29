@@ -1,11 +1,17 @@
 package edu.handong.csee.chatcounter;
-
+/**
+ * This class is for parsing window file
+ * String prevDate has value of date
+ * public void parseMessage(String fileName, String line, Message m) is parsing message
+ * 
+ * 
+ */
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class WindowParser {
 	String prevDate;
-	ChangeToDateNum changer = new ChangeToDateNum();
+	ChangeMonthToNum changer = new ChangeMonthToNum();
 	ChangeNumToString changerAM = new ChangeNumToString();
 	ChangePMToString changerPM = new ChangePMToString();
 	int hour;

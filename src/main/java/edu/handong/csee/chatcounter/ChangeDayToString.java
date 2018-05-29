@@ -1,5 +1,9 @@
 package edu.handong.csee.chatcounter;
-
+/**
+ * This class is for alternate day to String '00' form
+ * @author leehyunji0715
+ *
+ */
 public class ChangeDayToString {
 	public String changeToDay(String num) {
 		if(num=="1") {

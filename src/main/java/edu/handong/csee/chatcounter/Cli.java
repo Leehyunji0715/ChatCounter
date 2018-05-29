@@ -6,7 +6,11 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
-
+/**
+ * This class is for operating main in cmd or terminal
+ * @author leehyunji0715
+ *
+ */
 public class Cli {
 	String path;
 	boolean verbose;

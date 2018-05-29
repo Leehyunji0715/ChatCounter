@@ -5,7 +5,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * This class has String value named mMessage, mName, mDate;
+ * For those Strings are private, each of them has getter and setter method
+ * @author leehyunji0715
+ *
+ */
 public class Message {
 	String mMessage;
 	String mName;

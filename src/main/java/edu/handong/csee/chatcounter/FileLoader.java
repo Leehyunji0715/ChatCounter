@@ -7,6 +7,9 @@ import java.util.Scanner;
 /**
  * This class's role is to load fileContents and fileNames
  * private ArrayList<String> fileNames is for getting fileNames
+ * public ArrayList<String> getFileNames(String path) gets file names
+ * public ArrayList<String> getFileContents(String fileName,String path) gets file Contents
+ * public void printFileContents(String fileName,int lineNum, String path) prints out fileContents(For checking)
  * 
  * @author leehyunji0715
  */

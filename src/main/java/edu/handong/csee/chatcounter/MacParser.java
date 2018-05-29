@@ -1,7 +1,13 @@
 package edu.handong.csee.chatcounter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * This class is for parsing "csv" file
+ * public void parseMessage(String fileName, String line,Boolean Check,Message m) is for parsing mac file
+ * 
+ * @author leehyunji0715
+ *
+ */
 public class MacParser {
 	
 	private String keyName;

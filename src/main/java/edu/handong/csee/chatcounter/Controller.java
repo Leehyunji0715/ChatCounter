@@ -16,6 +16,11 @@ import java.util.TreeMap;
 import java.util.Iterator;
 /**
  * This is Controller which shows a result of the number of KaKao Talk messages
+ * m is Message Class
+ * Boolean 'check' is for MacParser Class
+ * mac is MacParserClass
+ * window is WindowParser Class
+ * (Hash)Map<String, ArrayList<Message>> map is for save data about name and Message m 
  * @author leehyunji0715
  *
  */

@@ -1,5 +1,9 @@
 package edu.handong.csee.chatcounter;
-
+/**
+ * This class is for alternate PM time to String '00' form
+ * @author leehyunji0715
+ *
+ */
 public class ChangePMToString {
 	public String changeToString(int num) {
 		if(num==1) {
