@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class FileLoader {
 	private ArrayList<String> fileNames = new ArrayList<String>();
-	//static String path;
 	static int lineNum;
 	
 	public ArrayList<String> getFileNames(String path){ // 파일 네임을 불러오는 메소드 1 
@@ -29,17 +28,15 @@ public class FileLoader {
 			Scanner inputStream = new Scanner(callFile);
 			String line;
 			while(inputStream.hasNextLine()) {
-			//	*****************************************
 				line = inputStream.nextLine();
 				fileLine.add(line);
 				lineNum++;
-			//  *****************************************
 			}	
 		} catch (FileNotFoundException e) {
 			System.out.println("Cannot find the file");
 		}
 		return fileLine;
-	}// complete...??????
+	}
 
 
 public void printFileContents(String fileName,int lineNum, String path) {
@@ -47,7 +44,6 @@ public void printFileContents(String fileName,int lineNum, String path) {
 	ArrayList<String> fileLine = new ArrayList<String>();
 	
 	try {
-		
 		Scanner inputStream = new Scanner(callFile);
 		String line;
 		while(inputStream.hasNextLine()) {
@@ -58,7 +54,7 @@ public void printFileContents(String fileName,int lineNum, String path) {
 		System.out.println("Cannot find the file");
 	}
 }
-}//***** complete!
+}
 
 
 
