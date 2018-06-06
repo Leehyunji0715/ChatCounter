@@ -26,7 +26,8 @@ import java.util.Iterator;
  */
 
 public class Controller {
-
+/// /Users/leehyunji0715/Desktop/한동대학교/3학기/자바 프로그래밍/ChatCounter
+//-p /Users/leehyunji0715/Desktop/ChatCounter/
 	public static void main(String[] args) throws IOException {
 		Cli cli = new Cli();
 		cli.run(args);
@@ -47,7 +48,7 @@ public class Controller {
 
 
 		for(int i=0;i<fNames.size();i++) { // call one file
-			//fl.printFileContents(fNames.get(i),fl.lineNum,cli.path);
+			fl.printFileContents(fNames.get(i),fl.lineNum,cli.path);
 			//~~~~~~~~~~~~~print~Contents~~~~~~~~~~~~~~~
 			aFileLines = fl.getFileContents(fNames.get(i), cli.path);
 
